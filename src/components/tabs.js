@@ -13,6 +13,12 @@ const Tabs = (topics) => {
   topic.appendChild(bootstrapTab);
   topic.appendChild(techno);
 
+  jsTab.textContent = "javascript";
+  bootstrapTab.textContent = "bootstrap";
+  techno.textContent = "technology";
+
+  return topic;
+
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
