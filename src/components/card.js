@@ -1,4 +1,25 @@
-const Card = (article) => {
+const Card = (article, headline, authorPhoto, authorName) => {
+  const cardClass = document.createElement("div");
+  const headLine = document.createElement("div");
+  const author = document.createElement("div");
+  const imageCont = document.createElement("div");
+  const image = document.createElement("img");
+  const authName = document.createElement("span");
+
+  cardClass.classList.add("card");
+  headLine.classList.add("headline");
+  author.classList.add("author");
+  imageCont.classList.add("img-container");
+
+  cardClass.appendChild(headLine);
+  cardClass.appendChild(author);
+  author.appendChild(imageCont);
+  imageCont.appendChild(image);
+  author.appendChild(authName);
+
+  headLine.textContent = headline;
+  image.src = authorPhoto;
+  authName.textContent = authorName;
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,7 +38,7 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+};
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -28,6 +49,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+};
 
-export { Card, cardAppender }
+export { Card, cardAppender };
