@@ -16,6 +16,8 @@ const Header = (title, date, temp) => {
   header.appendChild(titleH1);
   header.appendChild(temperature);
 
+  return header;
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.

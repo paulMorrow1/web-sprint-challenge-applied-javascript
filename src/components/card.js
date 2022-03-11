@@ -17,9 +17,11 @@ const Card = (article, headline, authorPhoto, authorName) => {
   imageCont.appendChild(image);
   author.appendChild(authName);
 
-  headLine.textContent = headline;
-  image.src = authorPhoto;
-  authName.textContent = authorName;
+  headLine.textContent = article.headline;
+  image.src = article.authorPhoto;
+  authName.textContent = article.authorName;
+
+  return cardClass;
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.

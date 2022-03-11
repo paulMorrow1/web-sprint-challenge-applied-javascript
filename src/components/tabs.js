@@ -13,9 +13,9 @@ const Tabs = (topics) => {
   topic.appendChild(bootstrapTab);
   topic.appendChild(techno);
 
-  jsTab.textContent = "javascript";
-  bootstrapTab.textContent = "bootstrap";
-  techno.textContent = "technology";
+  jsTab.textContent = topics[0];
+  bootstrapTab.textContent = topics[1];
+  techno.textContent = topics[2];
 
   return topic;
 
