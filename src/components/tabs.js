@@ -1,23 +1,17 @@
-const Tabs = (topics) => {
-  const topic = document.createElement("div");
-  const jsTab = document.createElement("div");
-  const bootstrapTab = document.createElement("div");
-  const techno = document.createElement("div");
+import axios from "axios";
 
-  topic.classList.add("topics");
-  jsTab.classList.add("tab");
-  bootstrapTab.classList.add("tab");
-  techno.classList.add("tab");
+const Tabs = (topicsResponse) => {
+  const topics = document.createElement("div");
+  topics.classList.add("topics");
 
-  topic.appendChild(jsTab);
-  topic.appendChild(bootstrapTab);
-  topic.appendChild(techno);
+  topicsResponse.forEach((topic) => {
+    const topicElm = document.createElement("div");
+    topicElm.classList.add("tab");
+    topicElm.textContent = topic;
+    topics.appendChild(topicElm);
+  });
 
-  jsTab.textContent = topics[0];
-  bootstrapTab.textContent = topics[1];
-  techno.textContent = topics[2];
-
-  return topic;
+  return topics;
 
   // TASK 3
   // ---------------------
@@ -36,6 +30,13 @@ const Tabs = (topics) => {
 };
 
 const tabsAppender = (selector) => {
+  const parentElem = document.querySelector(selector);
+  axios.get("http://localhost:5000/api/topics").then((response) => {
+    console.log("response: ", response);
+    const tabs = Tabs(response.data.topics);
+    parentElem.appendChild(tabs);
+  });
+
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.

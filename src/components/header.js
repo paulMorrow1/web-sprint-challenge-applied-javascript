@@ -1,3 +1,5 @@
+const head = document.querySelector(".header-container");
+
 const Header = (title, date, temp) => {
   const header = document.createElement("div");
   const dateSpan = document.createElement("span");
@@ -33,6 +35,9 @@ const Header = (title, date, temp) => {
 };
 
 const headerAppender = (selector) => {
+  const parentElem = document.querySelector(selector);
+  const header = Header("axios", "fetch", "xml");
+  parentElem.appendChild(header);
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
